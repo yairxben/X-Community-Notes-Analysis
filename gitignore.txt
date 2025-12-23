@@ -1,0 +1,92 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints
+# Allow .ipynb files (include notebooks)
+
+# Data files (large files - don't commit)
+data/
+*.tsv
+*.csv
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+
+# Model files (large - don't commit)
+*.pkl
+*.model
+*.joblib
+
+# Results and outputs (generated files)
+custom_topic_results/
+classification_analytics/
+demo_results/
+reports/
+plots/
+*.png
+*.jpg
+*.jpeg
+# Allow PDF files (include project report)
+# *.pdf
+
+# Logs
+*.log
+logs/
+
+# Environment variables
+.env
+.env.local
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Exclude documentation guides
+GITHUB_SETUP.md
+PRESENTATION_GUIDE.md
+
+# Exclude archive and document files
+*.zip
+*.docx
+noimages_OB_YB_AB_YB.pdf
+writeup_OB_YB_AB_YB.pdf
