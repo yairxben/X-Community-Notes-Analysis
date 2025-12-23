@@ -1,0 +1,69 @@
+{
+  "timestamp": "20250819_171115",
+  "processing_metadata": {
+    "training_time": 178.32478213310242,
+    "test_accuracy": 0.8277539341917024,
+    "training_size": 891221,
+    "feature_count": 50000,
+    "classification_time": 145.04472470283508,
+    "total_classified": 1219237,
+    "seed_labels_assigned": "891221",
+    "conflicted_notes": "202119",
+    "total_notes_processed": 1219237,
+    "english_only_filter": true
+  },
+  "analysis_results": {
+    "topic_distribution": {
+      "Politics": 196803,
+      "HealthMedical": 194973,
+      "Scams": 134193,
+      "UkraineConflict": 102965,
+      "Entertainment": 101399,
+      "Immigration": 87595,
+      "ChinaTaiwan": 85896,
+      "GazaConflict": 65114,
+      "Economics": 61809,
+      "OtherConflicts": 44060,
+      "ChinaInfluence": 43213,
+      "Technology": 41177,
+      "ClimateEnvironment": 30609,
+      "Iran": 16594,
+      "SyriaWar": 12837
+    },
+    "total_notes": 1219237,
+    "topics_assigned": 15,
+    "confidence_stats": {
+      "count": 1219237.0,
+      "mean": 0.45351127720439405,
+      "std": 0.24555534093433892,
+      "min": 0.0946326014251936,
+      "25%": 0.23957303903676558,
+      "50%": 0.39913881628228154,
+      "75%": 0.6060973638652348,
+      "max": 0.9999998815257216
+    }
+  },
+  "topic_labels": {
+    "0": "Unassigned",
+    "1": "UkraineConflict",
+    "2": "GazaConflict",
+    "3": "SyriaWar",
+    "4": "Iran",
+    "5": "ChinaTaiwan",
+    "6": "ChinaInfluence",
+    "7": "OtherConflicts",
+    "8": "Scams",
+    "9": "HealthMedical",
+    "10": "ClimateEnvironment",
+    "11": "Politics",
+    "12": "Technology",
+    "13": "Economics",
+    "14": "Entertainment",
+    "15": "Immigration"
+  },
+  "file_paths": {
+    "classified_notes": "custom_topic_results\\classified_notes_20250819_171115.csv",
+    "trained_model": "custom_topic_results\\trained_topic_model_20250819_171115.pkl",
+    "seed_terms": "custom_topic_results\\seed_terms_20250819_171115.json"
+  }
+}
