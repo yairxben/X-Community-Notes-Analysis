@@ -11,7 +11,7 @@ Who is actually fact-checking the fact-checkers? Beyond analyzing the notes them
 ### 1. Topic Classification Landscape
 We developed a custom **15-topic classification system** covering major geopolitical conflicts (Ukraine, Gaza, China-Taiwan) alongside general categories (Health, Scams, Politics). The model highlights which topics dominate the platform and how "competitive" the space is for fact-checkers.
 
-![Topic Dominance](images/topic_dominance_analysis.jpg)
+![Topic Dominance](plots/topic_classification/topic_dominance_analysis.jpg)
 *Figure 1: Topic Dominance vs. Competition. Bubbles represent total engagement, showing how "Health" and "Politics" dominate the ecosystem.*
 
 ### 2. "Fact-Checking" the Classifier
@@ -19,21 +19,20 @@ To validate our classification model without ground truth, we correlated topic v
 
 * **Validation:** Spikes in "Gaza Conflict" notes aligned perfectly with Oct 7; "Politics" spikes aligned with US Presidential Debates.
 
-![Temporal Analysis](images/temporal_analysis.jpg)
+![Temporal Analysis](plots/topic_classification/temporal_analysis.jpg)
 *Figure 2: Temporal analysis showing topic volume spikes aligning with major global events.*
 
 ### 3. Community Detection & Echo Chambers
 Using the **Louvain algorithm**, we identified distinct communities of contributors. While many users are generalists, we found highly specialized "echo chambers"—clusters of users who almost exclusively rate notes on specific topics like **Politics** or **Health**.
 
-![Community Radar Charts](images/community_radar_charts.jpg)
+![Community Radar Charts](plots/comuunity_detection/community_radar_charts.jpg)
 *Figure 3: Radar charts revealing the extreme topic specialization of the top contributor communities.*
 
 ### 4. The "Power User" Dynamic (Long-Tail Distribution)
 Our analysis of user activity reveals a classic **long-tail distribution**. The vast majority of contributors rate only a handful of notes, while a tiny, hyper-active minority drives the bulk of the platform's activity. This raises critical questions about the outsized influence of a few "super-raters."
 
-![User Activity Distribution](images/user_activity_long_tail.png)
+![User Activity Distribution](plots/eda/user_activity_distribution.png)
 *Figure 4: Distribution of user activity, showing that a small percentage of users generate the majority of ratings.*
-
 
 ---
 
