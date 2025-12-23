@@ -11,7 +11,7 @@ Who is actually fact-checking the fact-checkers? Beyond analyzing the notes them
 ### 1. Topic Classification Landscape
 We developed a custom **15-topic classification system** covering major geopolitical conflicts (Ukraine, Gaza, China-Taiwan) alongside general categories (Health, Scams, Politics). The model highlights which topics dominate the platform and how "competitive" the space is for fact-checkers.
 
-![Topic Dominance](plots/topic_classification/topic_dominance_analysis.jpg)
+![Topic Dominance](plots/topic_classification/topic_dominance_analysis.png)
 *Figure 1: Topic Dominance vs. Competition. Bubbles represent total engagement, showing how "Health" and "Politics" dominate the ecosystem.*
 
 ### 2. "Fact-Checking" the Classifier
@@ -25,7 +25,7 @@ To validate our classification model without ground truth, we correlated topic v
 ### 3. Community Detection & Echo Chambers
 Using the **Louvain algorithm**, we identified distinct communities of contributors. While many users are generalists, we found highly specialized "echo chambers"—clusters of users who almost exclusively rate notes on specific topics like **Politics** or **Health**.
 
-![Community Radar Charts](plots/comuunity_detection/community_radar_charts.jpg)
+![Community Radar Charts](plots/comuunity_detection/community_radar_charts.png)
 *Figure 3: Radar charts revealing the extreme topic specialization of the top contributor communities.*
 
 ### 4. The "Power User" Dynamic (Long-Tail Distribution)
