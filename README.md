@@ -1,71 +1,71 @@
 # X-Community-Notes-Analysis
-Analysis of 1.2M+ X Community Notes using NLP and network analysis. Investigates the impact of trustworthy sources, contributor polarization, and the "consensus paradox" in crowdsourced fact-checking.
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue) ![Scikit-Learn](https://img.shields.io/badge/Library-Scikit--Learn-orange) ![NetworkX](https://img.shields.io/badge/Library-NetworkX-green) ![Pandas](https://img.shields.io/badge/Data-Pandas-150458) ![Status](https://img.shields.io/badge/Status-Completed-success)
 
-# **Motivation**
-Who is actually fact-checking the fact-checkers? Beyond analyzing the notes themselves, this project scrutinizes the "crowd" behind them to see if contributors bridge divides or fracture into polarized echo chambers. We investigate whether user activity patterns signal healthy diversity or potential manipulation (e.g., bots) by hyperactive minority groups. Ultimately, we aim to answer a critical question: does Community Notes serve as a genuine corrective to misinformation, or does it risk reproducing the very societal divisions it was designed to fix?
+**A data science project analyzing 1.2M+ X (Twitter) Community Notes to detect polarization, bot activity, and consensus anomalies.**
+
+## 🛠️ Technologies & Tools
+* **Core:** Python 3.9, Pandas, NumPy
+* **Machine Learning (NLP):** Scikit-Learn (TF-IDF, Logistic Regression), NLTK/TextBlob
+* **Graph Theory:** NetworkX (Graph construction, Centrality metrics), Community Detection (Louvain Algorithm)
+* **Visualization:** Matplotlib, Seaborn
+* **DevOps:** Git, Jupyter Notebooks, Modular Project Structure
 
 ---
 
-## 📊 Key Findings & Visualizations
+## 📖 Motivation
+**Who is checking the fact-checkers?**
+This project applies **Natural Language Processing (NLP)** and **Network Analysis** to scrutinize the "crowd" behind Community Notes. We investigate whether the consensus algorithms successfully bridge political divides or if they inadvertently create "echo chambers" where only one side validates the truth.
 
-### 1. Topic Classification & Polarization
-We developed a custom **15-topic classification system** to measure which subjects are most susceptible to polarization. The results highlight a stark contrast in "helpfulness" rates: while notes on domestic topics like **Health/Medical** and **Immigration** achieve consensus ~40% of the time, notes on geopolitical conflicts (e.g., **Ukraine**, **Gaza**) struggle significantly, dropping to 13-21%. This confirms that the most divisive topics are exactly where the system struggles most to validate facts.
+---
+
+## 📊 Key Findings & Technical Insights
+
+### 1. Topic Classification & The "Consensus Gap"
+We engineered a **custom 15-class Text Classifier** (TF-IDF + Logistic Regression) to categorize notes into topics like *Gaza Conflict*, *Politics*, and *Health*.
+* **Technical Insight:** While the model achieved **81.4% accuracy**, we found a massive disparity in "Helpfulness" rates. "Objective" topics like *Scams* have high consensus, whereas *Geopolitical Conflicts* show agreement rates as low as **13-21%**, highlighting a flaw in the consensus mechanism for polarized data.
 
 ![Topic Polarization](plots/topic_classification/topic_discriminating_features.png)
-*Figure 1: Helpfulness rates by topic. Green bars represent the percentage of notes rated "Helpful." Note the sharp drop in agreement for conflict-related topics (Ukraine, Gaza) compared to Health or Immigration.*
+*Figure 1: Helpfulness rates by topic. Green bars represent the percentage of notes rated "Helpful."*
 
-### 2. "Fact-Checking" the Classifier
-To validate our classification model without ground truth, we correlated topic volume spikes with real-world events. The alignment was precise, confirming the model's ability to detect breaking news trends instantly.
-
-* **Validation:** Spikes in "Gaza Conflict" notes aligned perfectly with Oct 7; "Politics" spikes aligned with US Presidential Debates.
+### 2. Validation via Temporal Event Mapping
+To validate our unsupervised classification without ground-truth labels, we performed **Time-Series Analysis** correlating note volume with real-world timestamps.
+* **Result:** The model correctly identified volume spikes corresponding to the **October 7th War** (Gaza Label) and **US Presidential Debates** (Politics Label) with near-perfect temporal alignment.
 
 ![Temporal Analysis](plots/topic_classification/temporal_analysis.png)
 *Figure 2: Temporal analysis showing topic volume spikes aligning with major global events.*
 
-### 3. Community Detection & Echo Chambers
-Using the **Louvain algorithm**, we identified distinct communities of contributors. While many users are generalists, we found highly specialized "echo chambers"—clusters of users who almost exclusively rate notes on specific topics like **Politics** or **Health**.
+### 3. Community Detection (Graph Theory)
+We constructed a **Contributor-Note Graph** (Nodes=Users, Edges=Agreements) and applied the **Louvain Modularity Algorithm** to detect communities.
+* **Result:** The algorithm partitioned the user base into distinct clusters (visualized below). We found that specific communities specialize heavily (e.g., a "Medical" cluster vs. a "Political" cluster), effectively operating as distinct echo chambers rather than a unified "crowd."
 
-![Community Radar Charts](plots/comuunity_detection/community_radar_charts.png)
-*Figure 3: Radar charts revealing the extreme topic specialization of the top contributor communities.*
+![Community Graph](plots/comuunity_detection/community_dist.jpg)
+*Figure 3: Network Graph of 15 contributor communities detected by the Louvain Algorithm. Each color represents a distinct community cluster.*
 
-### 4. The "Power User" Dynamic (Long-Tail Distribution)
-Our analysis of user activity reveals a classic **long-tail distribution**. The vast majority of contributors rate only a handful of notes, while a tiny, hyper-active minority drives the bulk of the platform's activity. This raises critical questions about the outsized influence of a few "super-raters."
+### 4. The "Power User" Long-Tail Distribution
+Statistical analysis of user activity reveals a heavy **Power Law distribution**.
+* **Data:** A tiny fraction (<1%) of "hyper-active" users contribute the vast majority of ratings. This raises algorithmic concerns about the outsized influence of a few "super-raters" on the global consensus.
 
-![User Activity Distribution](plots/comuunity_detection/user_activity_distribution.jpg)
+![User Activity Distribution](plots/comuunity_detection/community_dist.jpg)
 *Figure 4: Distribution of user activity, showing that a small percentage of users generate the majority of ratings.*
 
 ---
 
-## 🚀 Key Features
-
-* [cite_start]**15-Topic Classification System:** Automated labeling for Ukraine Conflict, Gaza Conflict, Syria War, Iran, China-Taiwan, China Influence, Scams, Health/Medical, Climate, Politics, Tech, Economics, and more[cite: 126, 131].
-* [cite_start]**Hybrid NLP Model:** TF-IDF + Logistic Regression pipeline achieving **81.4% accuracy** with high efficiency (~1000 notes/sec)[cite: 134, 139].
-* [cite_start]**Community Detection:** Network analysis using Louvain modularity to identify echo chambers and topic leadership[cite: 301].
-* [cite_start]**Comprehensive EDA:** Statistical analysis of user activity, "power user" curves, and temporal trends[cite: 318].
-
-![Temporal Analysis](images/temporal_analysis.jpg)
-[cite_start]*Figure 4: Validating the classifier—Topic spikes align perfectly with real-world events (Oct 7, US Debates)[cite: 154].*
-
----
-
-## 📁 Project Structure
+## 💻 Project Structure & Code Quality
+The project is structured as a production-ready data pipeline, separating core logic from analysis notebooks.
 
 ```text
 .
 ├── code/
 │   ├── classification/
-│   │   ├── topic_classifier.py          # TF-IDF + LogReg Classification engine
-│   │   └── analyze_classification_results.py
+│   │   ├── topic_classifier.py          # TF-IDF + LogReg Class implementation
+│   │   └── analyze_results.py           # Metrics calculation
 │   ├── clustering/
-│   │   ├── communities_analysis.py      # NetworkX & Louvain implementation
-│   │   └── louvain_communities.ipynb    # Community analysis notebook
+│   │   ├── communities_analysis.py      # NetworkX Graph construction & Louvain
+│   │   └── louvain_communities.ipynb    # Clustering execution
 │   ├── eda/
-│   │   └── eda_analysis.py              # Statistical analysis scripts
-│   ├── demo_workflow.py                 # End-to-end demo script
-│   └── generate_report.py               # Automated report generator
-├── run_analysis.py                      # Main entry point CLI
-├── plots/                               # Generated Figures
-│   ├── topic_classification/
-│   ├── comuunity_detection/
-│   └── eda/
+│   │   └── eda_analysis.py              # Statistical aggregation scripts
+│   ├── demo_workflow.py                 # End-to-end pipeline entry point
+│   └── generate_report.py               # Automated reporting module
+├── run_analysis.py                      # CLI Argument Parser for running tasks
+├── plots/                               # Generated Analysis Figures
 └── README.md
