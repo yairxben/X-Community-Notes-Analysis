@@ -31,7 +31,7 @@ Using the **Louvain algorithm**, we identified distinct communities of contribut
 ### 4. The "Power User" Dynamic (Long-Tail Distribution)
 Our analysis of user activity reveals a classic **long-tail distribution**. The vast majority of contributors rate only a handful of notes, while a tiny, hyper-active minority drives the bulk of the platform's activity. This raises critical questions about the outsized influence of a few "super-raters."
 
-![User Activity Distribution](plots/eda/user_activity_distribution.png)
+![User Activity Distribution](plots/comuunity_detection/user_activity_distribution.png)
 *Figure 4: Distribution of user activity, showing that a small percentage of users generate the majority of ratings.*
 
 ---
