@@ -45,7 +45,7 @@ We constructed a **Contributor-Note Graph** (Nodes=Users, Edges=Agreements) and 
 Statistical analysis of user activity reveals a heavy **Power Law distribution**.
 * **Data:** A tiny fraction (<1%) of "hyper-active" users contribute the vast majority of ratings. This raises algorithmic concerns about the outsized influence of a few "super-raters" on the global consensus.
 
-![User Activity Distribution](plots/comuunity_detection/community_dist.jpg)
+![User Activity Distribution](plots/comuunity_detection/user_activity_distribution.jpg)
 *Figure 4: Distribution of user activity, showing that a small percentage of users generate the majority of ratings.*
 
 ---
