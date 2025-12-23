@@ -8,11 +8,11 @@ Who is actually fact-checking the fact-checkers? Beyond analyzing the notes them
 
 ## 📊 Key Findings & Visualizations
 
-### 1. Topic Classification Landscape
-We developed a custom **15-topic classification system** covering major geopolitical conflicts (Ukraine, Gaza, China-Taiwan) alongside general categories (Health, Scams, Politics). The model highlights which topics dominate the platform and how "competitive" the space is for fact-checkers.
+### 1. Topic Classification & Polarization
+We developed a custom **15-topic classification system** to measure which subjects are most susceptible to polarization. The results highlight a stark contrast in "helpfulness" rates: while notes on domestic topics like **Health/Medical** and **Immigration** achieve consensus ~40% of the time, notes on geopolitical conflicts (e.g., **Ukraine**, **Gaza**) struggle significantly, dropping to 13-21%. This confirms that the most divisive topics are exactly where the system struggles most to validate facts.
 
-![Topic Dominance](plots/topic_classification/topic_dominance_analysis.png)
-*Figure 1: Topic Dominance vs. Competition. Bubbles represent total engagement, showing how "Health" and "Politics" dominate the ecosystem.*
+![Topic Polarization](plots/topic_classification/topic_discriminating_features.png)
+*Figure 1: Helpfulness rates by topic. Green bars represent the percentage of notes rated "Helpful." Note the sharp drop in agreement for conflict-related topics (Ukraine, Gaza) compared to Health or Immigration.*
 
 ### 2. "Fact-Checking" the Classifier
 To validate our classification model without ground truth, we correlated topic volume spikes with real-world events. The alignment was precise, confirming the model's ability to detect breaking news trends instantly.
