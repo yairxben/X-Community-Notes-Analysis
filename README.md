@@ -19,7 +19,7 @@ To validate our classification model without ground truth, we correlated topic v
 
 * **Validation:** Spikes in "Gaza Conflict" notes aligned perfectly with Oct 7; "Politics" spikes aligned with US Presidential Debates.
 
-![Temporal Analysis](plots/topic_classification/temporal_analysis.jpg)
+![Temporal Analysis](plots/topic_classification/temporal_analysis.png)
 *Figure 2: Temporal analysis showing topic volume spikes aligning with major global events.*
 
 ### 3. Community Detection & Echo Chambers
