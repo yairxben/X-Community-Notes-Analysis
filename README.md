@@ -1,76 +1,46 @@
 # X-Community-Notes-Analysis
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue) ![Status](https://img.shields.io/badge/Status-Active-success) ![License](https://img.shields.io/badge/License-MIT-green)
+Analysis of 1.2M+ X Community Notes using NLP and network analysis. Investigates the impact of trustworthy sources, contributor polarization, and the "consensus paradox" in crowdsourced fact-checking.
 
-**Analysis of 1.2M+ X (Twitter) Community Notes using NLP and Network Analysis.**
-
-This project investigates the mechanics of crowdsourced fact-checking, specifically focusing on the impact of trustworthy sources, contributor polarization, and the "Consensus Paradox."
-
-## 📖 Project Overview
-
-### Motivation
-> "Who is actually fact-checking the fact-checkers?"
-
-Beyond analyzing the notes themselves, this project scrutinizes the "crowd" behind them to see if contributors bridge divides or fracture into polarized echo chambers. We investigate whether user activity patterns signal healthy diversity or potential manipulation (e.g., bots) by hyperactive minority groups.
-
-Ultimately, we aim to answer a critical question: **Does Community Notes serve as a genuine corrective to misinformation, or does it risk reproducing the very societal divisions it was designed to fix?**
-
-### Key Objectives
-* **Data Mining:** Processed a dataset of **1.2 million** notes and ratings.
-* **Network Analysis:** Modeled contributor interactions to detect polarization and echo chambers.
-* **NLP Analysis:** Used natural language processing to assess sentiment and topic clustering.
-* **Bot Detection:** Analyzed temporal activity patterns to identify non-human behavior and hyperactive minority groups.
+# **Motivation**
+Who is actually fact-checking the fact-checkers? Beyond analyzing the notes themselves, this project scrutinizes the "crowd" behind them to see if contributors bridge divides or fracture into polarized echo chambers. We investigate whether user activity patterns signal healthy diversity or potential manipulation (e.g., bots) by hyperactive minority groups. Ultimately, we aim to answer a critical question: does Community Notes serve as a genuine corrective to misinformation, or does it risk reproducing the very societal divisions it was designed to fix?
 
 ---
 
-## 📊 Visualizations & Findings
+## 📊 Key Findings & Visualizations
 
-### 1. The Consensus Paradox
-We observed that notes requiring broad consensus often fail to gain traction in highly polarized topics. The graph below visualizes the separation between contributor groups.
-
-![Network Graph Placeholder](path/to/your/network_graph_image.png)
-*Figure 1: Network graph showing contributor clusters. The scarcity of edges between groups highlights the difficulty of achieving cross-partisan consensus.*
-
-### 2. Activity Distribution
-A small minority of "hyper-active" users contribute the vast majority of notes.
-
-![Distribution Plot Placeholder](path/to/your/distribution_image.png)
-*Figure 2: Distribution of User Contributions vs. Helpfulness Ratio.*
 
 ---
 
-## 🛠️ Tech Stack
+## 🚀 Key Features
 
-* **Language:** Python
-* **Data Manipulation:** Pandas, NumPy
-* **Network Analysis:** NetworkX
-* **NLP:** [Insert libraries here, e.g., NLTK, spaCy, Transformers]
-* **Visualization:** Matplotlib, Seaborn
+* [cite_start]**15-Topic Classification System:** Automated labeling for Ukraine Conflict, Gaza Conflict, Syria War, Iran, China-Taiwan, China Influence, Scams, Health/Medical, Climate, Politics, Tech, Economics, and more[cite: 126, 131].
+* [cite_start]**Hybrid NLP Model:** TF-IDF + Logistic Regression pipeline achieving **81.4% accuracy** with high efficiency (~1000 notes/sec)[cite: 134, 139].
+* [cite_start]**Community Detection:** Network analysis using Louvain modularity to identify echo chambers and topic leadership[cite: 301].
+* [cite_start]**Comprehensive EDA:** Statistical analysis of user activity, "power user" curves, and temporal trends[cite: 318].
 
----
-
-## 💻 Installation & Usage
-
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/yourusername/X-Community-Notes-Analysis.git](https://github.com/yourusername/X-Community-Notes-Analysis.git)
-    ```
-
-2.  **Install dependencies:**
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3.  **Run the analysis:**
-    ```bash
-    jupyter notebook analysis_main.ipynb
-    ```
+![Temporal Analysis](images/temporal_analysis.jpg)
+[cite_start]*Figure 4: Validating the classifier—Topic spikes align perfectly with real-world events (Oct 7, US Debates)[cite: 154].*
 
 ---
 
-## 📝 Conclusion
-Our analysis suggests that while Community Notes effectively flags obvious misinformation, it struggles in subjective, political contexts due to **structural polarization**. The mechanism designed to ensure fairness—requiring diverse agreement—may inadvertently stifle fact-checking on controversial topics.
+## 📁 Project Structure
 
----
-
-## 🤝 Contributing
-Contributions, issues, and feature requests are welcome!
+```text
+.
+├── code/
+│   ├── classification/
+│   │   ├── topic_classifier.py          # TF-IDF + LogReg Classification engine
+│   │   └── analyze_classification_results.py
+│   ├── clustering/
+│   │   ├── communities_analysis.py      # NetworkX & Louvain implementation
+│   │   └── louvain_communities.ipynb    # Community analysis notebook
+│   ├── eda/
+│   │   └── eda_analysis.py              # Statistical analysis scripts
+│   ├── demo_workflow.py                 # End-to-end demo script
+│   └── generate_report.py               # Automated report generator
+├── run_analysis.py                      # Main entry point CLI
+├── plots/                               # Generated Figures
+│   ├── topic_classification/
+│   ├── comuunity_detection/
+│   └── eda/
+└── README.md
